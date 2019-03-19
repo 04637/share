@@ -20,17 +20,17 @@ public class WhyConcurrent {
             30, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
 
     // todo 1.演示线程安全 map
-    private static Map<String, String> map3 = new HashMap<>();
-    private static Map<String, String> map2 = new ConcurrentHashMap<>();
-    private static Map<String, String> map = new Hashtable<>();
+    private static Map<String, String> map = new HashMap<>();
+    private static Map<String, String> map1 = new ConcurrentHashMap<>();
+    private static Map<String, String> map2 = new Hashtable<>();
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 3000000; i++) {
+        for (int i = 0; i < 10000; i++) {
             String s = i + "";
             poolExecutor.execute(() -> {
                 map.put(s, s);
-                map.get("1000");
+//                map.get("1000");
             });
         }
         try {

@@ -27,9 +27,9 @@
             <appender-ref ref="RollingFile"/>
         </logger>
 
-        <!--<logger name="com.ty.share.websocket.WebSocket" level="trace" additivity="true">-->
-            <!--<appender-ref ref="Console"/>-->
-        <!--</logger>-->
+        <logger name="com.ty.share.websocket.WebSocket" level="trace" additivity="true">
+            <appender-ref ref="Console"/>
+        </logger>
 
         <logger name="com.ty.share.scheduled.ScheduledService" level="info" additivity="false">
             <appender-ref ref="Console"/>
